@@ -1022,16 +1022,16 @@ class Block_Unit_Test {
 			<!-- wp:gallery {"columns":3} -->
 			<ul class="wp-block-gallery alignnone columns-3 is-cropped">
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 			</ul>
 			<!-- /wp:gallery -->
@@ -1058,12 +1058,12 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide"} -->
 				<ul class="wp-block-gallery alignwide columns-2 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" />
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" />
 							<figcaption>Captions for Gallery Images</figcaption>
 						</figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1079,13 +1079,13 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide"} -->
 				<ul class="wp-block-gallery alignwide columns-3 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1104,13 +1104,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1126,19 +1126,19 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide","columns":5} -->
 				<ul class="wp-block-gallery alignwide columns-5 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1157,16 +1157,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1185,16 +1185,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1213,16 +1213,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1241,13 +1241,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1266,15 +1266,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" />
-							<figcaption>Captions for Gallery Images</figcaption>
-						</figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
