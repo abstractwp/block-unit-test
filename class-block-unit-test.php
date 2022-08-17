@@ -1035,6 +1035,38 @@ class Block_Unit_Test {
 				</li>
 			</ul>
 			<!-- /wp:gallery -->
+
+			<!-- wp:heading -->
+			<h2>Media &amp; Text</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg media &amp; text block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on right</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"mediaType":"image"} -->
+			<div class="wp-block-media-text alignnone is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
+
+			<!-- wp:separator -->
+			<hr class="wp-block-separator has-alpha-channel-opacity"/>
+			<!-- /wp:separator -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on left</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image"} -->
+			<div class="wp-block-media-text alignnone has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
