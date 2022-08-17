@@ -1022,19 +1022,159 @@ class Block_Unit_Test {
 			<!-- wp:gallery {"columns":3} -->
 			<ul class="wp-block-gallery alignnone columns-3 is-cropped">
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 				</li>
 			</ul>
 			<!-- /wp:gallery -->
+
+			<!-- wp:heading -->
+			<h2>Media &amp; Text</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg media &amp; text block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on right</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"mediaType":"image"} -->
+			<div class="wp-block-media-text alignnone is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
+
+			<!-- wp:separator -->
+			<hr class="wp-block-separator has-alpha-channel-opacity"/>
+			<!-- /wp:separator -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on left</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image"} -->
+			<div class="wp-block-media-text alignnone has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
+
+			<!-- wp:heading -->
+			<h2>Calendar</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg calendar block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:calendar /-->
+
+			<!-- wp:heading -->
+			<h2>Latest Comments</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg latest comments block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-comments /-->
+
+			<!-- wp:heading -->
+			<h2>WordPress TV blocks</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg WordPress tv blocks.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:embed {"url":"https://www.youtube.com/watch?v=a3ICNMQW7Ok","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+			<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+			https://www.youtube.com/watch?v=a3ICNMQW7Ok
+			</div></figure>
+			<!-- /wp:embed -->
+
+			<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+			<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+			https://vimeo.com/253989945
+			</div></figure>
+			<!-- /wp:embed -->
+
+			<!-- wp:heading -->
+			<h2>Search block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg search block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
+
+			<!-- wp:heading -->
+			<h2>Latest posts block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Latest Posts block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-posts {"displayPostContent":true,"excerptLength":25,"displayAuthor":true,"displayPostDate":true,"displayFeaturedImage":true} /-->
+
+			<!-- wp:heading -->
+			<h2>Social Icons block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Social Icons block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:social-links {"openInNewTab":true,"showLabels":true} -->
+			<ul class="wp-block-social-links has-visible-labels">
+
+			<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"twitter"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"youtube"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"tiktok"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"telegram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"skype"} /--></ul>
+			<!-- /wp:social-links -->
+
+			<!-- wp:heading -->
+			<h2>Cover block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg Cover blocks.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:cover {"overlayColor":"secondary","isDark":false} -->
+			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
+
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":16,"dimRatio":50} -->
+			<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
@@ -1058,12 +1198,12 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide"} -->
 				<ul class="wp-block-gallery alignwide columns-2 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" />
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" />
 							<figcaption>Captions for Gallery Images</figcaption>
 						</figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1079,13 +1219,13 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide"} -->
 				<ul class="wp-block-gallery alignwide columns-3 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1104,13 +1244,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1126,19 +1266,19 @@ class Block_Unit_Test {
 				<!-- wp:gallery {"align":"wide","columns":5} -->
 				<ul class="wp-block-gallery alignwide columns-5 is-cropped">
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1157,16 +1297,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1185,16 +1325,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1213,16 +1353,16 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2121" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1241,13 +1381,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1266,15 +1406,13 @@ class Block_Unit_Test {
 						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2125" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2117" /></figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2119" />
-							<figcaption>Captions for Gallery Images</figcaption>
-						</figure>
+						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 					</li>
 				</ul>
 				<!-- /wp:gallery -->
@@ -1292,6 +1430,26 @@ class Block_Unit_Test {
 				<p>This is part of the InnerBlocks text for the Media &amp; Text block.</p>
 				<!-- /wp:paragraph --></div></div>
 				<!-- /wp:media-text -->
+
+				<!-- wp:heading -->
+				<h2>Cover block</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Here are examples of the core Gutenberg Cover blocks.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:cover {"overlayColor":"secondary","isDark":false,"align":"wide"} -->
+				<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+				<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
+				<!-- /wp:paragraph --></div></div>
+				<!-- /wp:cover -->
+
+				<!-- wp:cover {"url":"http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg","id":16,"dimRatio":50,"align":"wide"} -->
+				<div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+				<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
+				<!-- /wp:paragraph --></div></div>
+				<!-- /wp:cover -->
 			';
 		}
 		return apply_filters( 'block_unit_test_content', $content );
