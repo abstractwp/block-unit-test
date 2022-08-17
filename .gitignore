@@ -6,6 +6,5 @@ languages/**
 *.sublime-workspace
 *.cache
 .DS_Store
-.github/
-.github/issue_template.md
+!.github/workflows/phpcs.yml
 vendor/
