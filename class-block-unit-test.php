@@ -1073,7 +1073,7 @@ class Block_Unit_Test {
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>Here are examples of the core Gutenberg calendar block.</p>
+			<p>Here is example of the core Gutenberg calendar block.</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:calendar /-->
@@ -1083,10 +1083,30 @@ class Block_Unit_Test {
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>Here are examples of the core Gutenberg latest comments block.</p>
+			<p>Here is example of the core Gutenberg latest comments block.</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:latest-comments /-->
+
+			<!-- wp:heading -->
+			<h2>WordPress TV blocks</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg WordPress tv blocks.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:embed {"url":"https://www.youtube.com/watch?v=a3ICNMQW7Ok","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+			<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+			https://www.youtube.com/watch?v=a3ICNMQW7Ok
+			</div></figure>
+			<!-- /wp:embed -->
+
+			<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+			<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+			https://vimeo.com/253989945
+			</div></figure>
+			<!-- /wp:embed -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
