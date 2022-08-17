@@ -1107,6 +1107,26 @@ class Block_Unit_Test {
 			https://vimeo.com/253989945
 			</div></figure>
 			<!-- /wp:embed -->
+
+			<!-- wp:heading -->
+			<h2>Search block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg search block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
+
+			<!-- wp:heading -->
+			<h2>Latest posts block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Latest Posts block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-posts {"displayPostContent":true,"excerptLength":25,"displayAuthor":true,"displayPostDate":true,"displayFeaturedImage":true} /-->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
