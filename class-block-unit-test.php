@@ -1077,6 +1077,16 @@ class Block_Unit_Test {
 			<!-- /wp:paragraph -->
 
 			<!-- wp:calendar /-->
+
+			<!-- wp:heading -->
+			<h2>Latest Comments</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg latest comments block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-comments /-->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
