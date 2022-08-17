@@ -1048,8 +1048,8 @@ class Block_Unit_Test {
 			<h3>Text on right</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaType":"image"} -->
-			<div class="wp-block-media-text alignnone is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
@@ -1062,8 +1062,8 @@ class Block_Unit_Test {
 			<h3>Text on left</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image"} -->
-			<div class="wp-block-media-text alignnone has-media-on-the-right is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-16 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
@@ -1430,26 +1430,6 @@ class Block_Unit_Test {
 				<p>This is part of the InnerBlocks text for the Media &amp; Text block.</p>
 				<!-- /wp:paragraph --></div></div>
 				<!-- /wp:media-text -->
-
-				<!-- wp:heading -->
-				<h2>Cover block</h2>
-				<!-- /wp:heading -->
-
-				<!-- wp:paragraph -->
-				<p>Here are examples of the core Gutenberg Cover blocks.</p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:cover {"overlayColor":"secondary","isDark":false,"align":"wide"} -->
-				<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
-				<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
-				<!-- /wp:paragraph --></div></div>
-				<!-- /wp:cover -->
-
-				<!-- wp:cover {"url":"http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg","id":16,"dimRatio":50,"align":"wide"} -->
-				<div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
-				<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
-				<!-- /wp:paragraph --></div></div>
-				<!-- /wp:cover -->
 			';
 		}
 		return apply_filters( 'block_unit_test_content', $content );
