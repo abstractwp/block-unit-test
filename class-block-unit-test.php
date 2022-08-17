@@ -1067,6 +1067,16 @@ class Block_Unit_Test {
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
+
+			<!-- wp:heading -->
+			<h2>Calendar</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg calendar block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:calendar /-->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
