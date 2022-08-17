@@ -1155,6 +1155,26 @@ class Block_Unit_Test {
 
 			<!-- wp:social-link {"url":"#","service":"skype"} /--></ul>
 			<!-- /wp:social-links -->
+
+			<!-- wp:heading -->
+			<h2>Cover block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg Cover blocks.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:cover {"overlayColor":"secondary","isDark":false} -->
+			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
+
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":16,"dimRatio":50} -->
+			<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
@@ -1410,6 +1430,26 @@ class Block_Unit_Test {
 				<p>This is part of the InnerBlocks text for the Media &amp; Text block.</p>
 				<!-- /wp:paragraph --></div></div>
 				<!-- /wp:media-text -->
+
+				<!-- wp:heading -->
+				<h2>Cover block</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Here are examples of the core Gutenberg Cover blocks.</p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:cover {"overlayColor":"secondary","isDark":false,"align":"wide"} -->
+				<div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+				<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
+				<!-- /wp:paragraph --></div></div>
+				<!-- /wp:cover -->
+
+				<!-- wp:cover {"url":"http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg","id":16,"dimRatio":50,"align":"wide"} -->
+				<div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="http://testblocks.test/wp-content/uploads/2022/08/ralph-mayhew-aIxIwhwKsLc-unsplash-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+				<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
+				<!-- /wp:paragraph --></div></div>
+				<!-- /wp:cover -->
 			';
 		}
 		return apply_filters( 'block_unit_test_content', $content );
