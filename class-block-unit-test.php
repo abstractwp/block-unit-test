@@ -1127,6 +1127,34 @@ class Block_Unit_Test {
 			<!-- /wp:paragraph -->
 
 			<!-- wp:latest-posts {"displayPostContent":true,"excerptLength":25,"displayAuthor":true,"displayPostDate":true,"displayFeaturedImage":true} /-->
+
+			<!-- wp:heading -->
+			<h2>Social Icons block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Social Icons block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:social-links {"openInNewTab":true,"showLabels":true} -->
+			<ul class="wp-block-social-links has-visible-labels">
+
+			<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"twitter"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"youtube"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"tiktok"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"telegram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"skype"} /--></ul>
+			<!-- /wp:social-links -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
