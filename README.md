@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-GPL--3.0%2B-red.svg)](https://github.com/richtabor/block-unit-test/blob/master/license.txt)
 
+![Screenshot](https://demotest.abstractwp.com/wp-content/uploads/2022/08/block-unit-test-screenshot.jpg)
+
 Testing every core block — and every variation of every block — is no small task. That's why I built the Block Unit Test WordPress plugin. Deploy the Block Unit Test WordPress plugin and review every core Gutenberg block to ensure your theme fully supports Gutenberg.
 
 ## Try Block Unit Test
