@@ -33,3 +33,35 @@ There are various ways you can contribute:
 1. Raise an [Issue](https://github.com/abstractwp/block-unit-test/issues/new) on GitHub
 2. Send a pull request with your changes and/or bug fixes
 3. Provide feedback and suggestions on [enhancements](https://github.com/abstractwp/block-unit-test/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
+
+## Changelog
+
+### 1.0.7 version
+
+* Fix: Broken some blocks and add missing blocks.
+
+### 1.0.5 version
+
+* Tweak: Update the CoBlocks and Gutenberg unit tests
+
+### 1.0.4 version
+
+* Tweak: Update the CoBlocks unit test
+
+### 1.0.3 version
+
+* New: Suggest running a unit test for CoBlocks
+* New: Add a CoBlocks unit test if the plugin is activated
+* New: Add the Archives block to the unit test
+* New: Add styles for the core Separator block
+* New: Add more tests for various column counts
+
+### 1.0.2 version
+
+* New: Automagically update the contents of the Block Unit Test page upon plugin update
+* New: Add captions to image, gallery and video blocks
+* Tweak: Add heading levels to heading blocks
+
+### 1.0.1 version
+
+* Fix undefined variable $content as per #1
