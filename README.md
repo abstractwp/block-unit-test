@@ -4,6 +4,10 @@
 
 Testing every core block — and every variation of every block — is no small task. That's why I built the Block Unit Test WordPress plugin. Deploy the Block Unit Test WordPress plugin and review every core Gutenberg block to ensure your theme fully supports Gutenberg.
 
+## Try Block Unit Test
+See Block Unit Test at [WP Test Demo](https://demotest.abstractwp.com/block-unit-test/)
+
+
 ## Installation ##
 
 1. Install the offical [Gutenberg](https://wordpress.org/plugins/gutenberg/) plugin. Note that Gutenberg is not suggested for use on production sites.
