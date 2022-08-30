@@ -14,12 +14,25 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: '16.7.0'
+      - run: npm install
+
+      - name: Compile assets
+        run: gulp build
+
+      - name: Remove node_modules
+        run: rm -rf node_modules
+
       - name: Deploy WordPress to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3.1.1
         with:
         # Keys, lint & url options
           WPE_SSHG_KEY_PRIVATE: ${{secrets.WPENGINE_SSH_KEY_PRIVATE}}
           PHP_LINT: FALSE
+          SRC_PATH: "build/block-unit-test/"
           REMOTE_PATH: "wp-content/plugins/block-unit-test/"
           CACHE_CLEAR: TRUE
           WPE_ENV: themeunittedev
