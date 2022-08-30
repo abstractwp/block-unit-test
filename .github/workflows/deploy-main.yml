@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Deploy to WPE
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy WordPress to WP Engine
+        uses: wpengine/github-action-wpe-site-deploy@v3.1.1
+        with:
+        # Keys, lint & url options
+          WPE_SSHG_KEY_PRIVATE: ${{secrets.WPENGINE_SSH_KEY_PRIVATE}}
+          PHP_LINT: FALSE
+          REMOTE_PATH: "wp-content/plugins/theme-test-data/"
+          CACHE_CLEAR: TRUE
+          WPE_ENV: themeunittest
+
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: general
+            SLACK_COLOR: ${{ job.status }}
+            SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
+            SLACK_USERNAME: Github
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+            SLACK_FOOTER: ${{ github.repository }}
