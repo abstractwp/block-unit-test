@@ -747,35 +747,23 @@ class Block_Unit_Test {
 		}
 
 		$content .= '
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"left","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim alignleft" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Left Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","dimRatio":50,"isDark":false,"align":"left"} -->
+			<div class="wp-block-cover alignleft is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Left Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
-			<!-- wp:paragraph -->
-			<p><strong>Left aligned:</strong> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","dimRatio":50,"isDark":false,"align":"right"} -->
+			<div class="wp-block-cover alignright is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Right Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"right","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim alignright" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Right Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
-
-			<!-- wp:paragraph -->
-			<p><strong>Right aligned:</strong> scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph -->
-			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. ﻿<strong>Center aligned:</strong></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"center","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim aligncenter" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Center Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":2117,"dimRatio":50,"isDark":false} -->
+			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-2117" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Center Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
