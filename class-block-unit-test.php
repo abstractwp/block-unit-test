@@ -672,18 +672,18 @@ class Block_Unit_Test {
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
 			<!-- /wp:separator -->
-
-			<!-- wp:heading {"level":2} -->
-			<h2>' . esc_html__( 'Video Block', '@@textdomain' ) . '</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Lets check out the positioning and styling of the video core block. We will check the wide and full alignments too.</p>
-			<!-- /wp:paragraph -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
+				<!-- wp:heading {"level":2} -->
+				<h2>' . esc_html__( 'Video Block', '@@textdomain' ) . '</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Lets check out the positioning and styling of the video core block. We will check the wide and full alignments too.</p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:heading {"level":3} -->
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
