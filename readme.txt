@@ -26,7 +26,7 @@ This plugin is maintained by [An Abstract](https://www.abstractwp.com/)
 
 Extensible, adaptable, and open source — the Block Unit Test plugin is created with theme developers in mind. There are opportunities for developers at all levels to get involved.
 
-[Click here](https://github.com/thatplugincompany/block-unit-test) to contribute to the plugin.
+[Click here](https://github.com/abstractwp/block-unit-test) to contribute to the plugin.
 
 == Installation ==
 
@@ -51,6 +51,11 @@ The Block Unit Test is a great starting point, but if you want more tips and tec
 I recently published an article covering [how to add WordPress theme styles to Gutenberg](https://richtabor.com/add-wordpress-theme-styles-to-gutenberg/?utm_medium=block-unit-test&utm_source=readme&utm_campaign=readme&utm_content=how-to-add-wordpress-theme-styling-to-gutenberg), which is a great place to start.
 
 == Changelog ==
+
+= 1.0.7 July 12, 2022 =
+
+- Fix: Update blocks catch up to WordPress 6
+- Fix: Add more blocks
 
 = 1.0.6, February 15, 2019 =
 * Tweak: Add Media & Text block to the unit test

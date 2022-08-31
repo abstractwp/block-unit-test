@@ -49,7 +49,6 @@ class Block_Unit_Test {
 	public static function register() {
 		if ( null === self::$instance ) {
 			self::$instance = new Block_Unit_Test();
-			self::$instance->includes();
 		}
 	}
 
@@ -79,47 +78,6 @@ class Block_Unit_Test {
 		add_action( 'admin_init', array( $this, 'create_block_unit_test_page' ) );
 		add_action( 'admin_init', array( $this, 'update_block_unit_test_page' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrade_completed' ), 10, 2 );
-		add_action( 'plugins_loaded', array( $this, 'suggest_coblocks' ) );
-
-		// Filters.
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
-	}
-
-	/**
-	 * Include required files.
-	 *
-	 * @access private
-	 * @since 1.0.3
-	 * @return void
-	 */
-	private function includes() {
-
-		include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-		// Check for CoBlocks.
-		if ( is_plugin_active( 'coblocks/class-coblocks.php' ) ) {
-			require_once untrailingslashit( plugin_dir_path( '/', __FILE__ ) ) . 'includes/class-block-unit-test-coblocks.php';
-		}
-
-		// Includes.
-		require_once untrailingslashit( plugin_dir_path( '/', __FILE__ ) ) . 'includes/class-block-unit-test-suggest-coblocks.php';
-		require_once untrailingslashit( plugin_dir_path( '/', __FILE__ ) ) . 'includes/vendors/dismiss-notices/dismiss-notices.php';
-	}
-
-	/**
-	 * Reccommend CoBlocks, if the plugin is not installed.
-	 *
-	 * @access public
-	 * @since 1.0.3
-	 * @return void
-	 */
-	public function suggest_coblocks() {
-
-		// Check for CoBlocks and suggest it if it's not installed.
-		if ( ! class_exists( 'CoBlocks' ) ) {
-			$suggestion = new Block_Unit_Test_Suggest_CoBlocks( plugin_dir_path( __FILE__ ) );
-			$suggestion = $suggestion->run();
-		}
 	}
 
 	/**
@@ -588,18 +546,18 @@ class Block_Unit_Test {
 			<blockquote class="wp-block-pullquote aligncenter">
 				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere est at lobortis.</p><cite>Rich Tabor, ThemeBeans.com</cite></blockquote>
 			<!-- /wp:pullquote -->
-
-			<!-- wp:heading {"level":3} -->
-			<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is an example of the core pull quote block, set to display with the wide-aligned attribute, if the theme allows it. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-			<!-- /wp:paragraph -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
+				<!-- wp:heading {"level":3} -->
+				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Here is an example of the core pull quote block, set to display with the wide-aligned attribute, if the theme allows it. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:pullquote {"align":"wide"} -->
 				<blockquote class="wp-block-pullquote alignwide">
 					<p>Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed ibendum nulla sed consectetur. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote>
@@ -714,18 +672,18 @@ class Block_Unit_Test {
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
 			<!-- /wp:separator -->
-
-			<!-- wp:heading {"level":2} -->
-			<h2>' . esc_html__( 'Video Block', '@@textdomain' ) . '</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Lets check out the positioning and styling of the video core block. We will check the wide and full alignments too.</p>
-			<!-- /wp:paragraph -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
+				<!-- wp:heading {"level":2} -->
+				<h2>' . esc_html__( 'Video Block', '@@textdomain' ) . '</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Lets check out the positioning and styling of the video core block. We will check the wide and full alignments too.</p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:heading {"level":3} -->
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
@@ -789,35 +747,23 @@ class Block_Unit_Test {
 		}
 
 		$content .= '
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"left","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim alignleft" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Left Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","dimRatio":50,"isDark":false,"align":"left"} -->
+			<div class="wp-block-cover alignleft is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Left Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
-			<!-- wp:paragraph -->
-			<p><strong>Left aligned:</strong> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","dimRatio":50,"isDark":false,"align":"right"} -->
+			<div class="wp-block-cover alignright is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Right Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"right","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim alignright" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Right Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
-
-			<!-- wp:paragraph -->
-			<p><strong>Right aligned:</strong> scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph -->
-			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. ﻿<strong>Center aligned:</strong></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:cover-image {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","align":"center","id":2117} -->
-			<div class="wp-block-cover-image has-background-dim aligncenter" style="background-image:url(' . esc_url( $this->url . '/placeholder.jpg' ) . ')">
-				<p class="wp-block-cover-image-text">' . esc_html__( 'Center Aligned Cover Image', '@@textdomain' ) . '</p>
-			</div>
-			<!-- /wp:cover-image -->
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":2117,"dimRatio":50,"isDark":false} -->
+			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-2117" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">Center Aligned Cover Image</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
@@ -1048,8 +994,8 @@ class Block_Unit_Test {
 			<h3>Text on right</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"align":"","mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
@@ -1062,8 +1008,8 @@ class Block_Unit_Test {
 			<h3>Text on left</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"align":"","mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
@@ -1433,30 +1379,6 @@ class Block_Unit_Test {
 			';
 		}
 		return apply_filters( 'block_unit_test_content', $content );
-	}
-
-	/**
-	 * Plugin row meta links
-	 *
-	 * @param array|array   $input already defined meta links.
-	 * @param string|string $file plugin file path and name being processed.
-	 * @return array $input
-	 */
-	public function plugin_row_meta( $input, $file ) {
-
-		if ( 'block-unit-test/class-block-unit-test.php' !== $file ) {
-			return $input;
-		}
-
-		$url = 'https://richtabor.com/gutenberg-block-unit-test/';
-
-		$links = array(
-			'<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'More information', '@@textdomain' ) . '</a>',
-		);
-
-		$input = array_merge( $input, $links );
-
-		return $input;
 	}
 }
 Block_Unit_Test::register();
