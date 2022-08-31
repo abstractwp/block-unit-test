@@ -80,9 +80,6 @@ class Block_Unit_Test {
 		add_action( 'admin_init', array( $this, 'update_block_unit_test_page' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrade_completed' ), 10, 2 );
 		add_action( 'plugins_loaded', array( $this, 'suggest_coblocks' ) );
-
-		// Filters.
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 	}
 
 	/**
@@ -1433,30 +1430,6 @@ class Block_Unit_Test {
 			';
 		}
 		return apply_filters( 'block_unit_test_content', $content );
-	}
-
-	/**
-	 * Plugin row meta links
-	 *
-	 * @param array|array   $input already defined meta links.
-	 * @param string|string $file plugin file path and name being processed.
-	 * @return array $input
-	 */
-	public function plugin_row_meta( $input, $file ) {
-
-		if ( 'block-unit-test/class-block-unit-test.php' !== $file ) {
-			return $input;
-		}
-
-		$url = 'https://richtabor.com/gutenberg-block-unit-test/';
-
-		$links = array(
-			'<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'More information', '@@textdomain' ) . '</a>',
-		);
-
-		$input = array_merge( $input, $links );
-
-		return $input;
 	}
 }
 Block_Unit_Test::register();
