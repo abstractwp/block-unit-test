@@ -546,18 +546,18 @@ class Block_Unit_Test {
 			<blockquote class="wp-block-pullquote aligncenter">
 				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere est at lobortis.</p><cite>Rich Tabor, ThemeBeans.com</cite></blockquote>
 			<!-- /wp:pullquote -->
-
-			<!-- wp:heading {"level":3} -->
-			<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is an example of the core pull quote block, set to display with the wide-aligned attribute, if the theme allows it. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-			<!-- /wp:paragraph -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
+				<!-- wp:heading {"level":3} -->
+				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p>Here is an example of the core pull quote block, set to display with the wide-aligned attribute, if the theme allows it. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:pullquote {"align":"wide"} -->
 				<blockquote class="wp-block-pullquote alignwide">
 					<p>Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed ibendum nulla sed consectetur. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote>
@@ -1006,7 +1006,7 @@ class Block_Unit_Test {
 			<h3>Text on right</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaType":"image","className":"alignnone"} -->
+			<!-- wp:media-text {"align":"","mediaType":"image","className":"alignnone"} -->
 			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
@@ -1020,7 +1020,7 @@ class Block_Unit_Test {
 			<h3>Text on left</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
+			<!-- wp:media-text {"align":"","mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
 			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
