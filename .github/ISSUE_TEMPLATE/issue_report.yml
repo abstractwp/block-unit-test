@@ -1,0 +1,42 @@
+name: Issue report
+description: Report a issue with the Block Unit Test plugin
+body:
+
+    - type: textarea
+      attributes:
+          label: Screenshots, screen recordings
+          description: |
+              - Include a link to [automated screenshots on CBT](https://app.crossbrowsertesting.com/screenshots/run) using the latest major browsers.
+              - Include a link to [CloudApp](https://www.getcloudapp.com/screenshot-tool/)
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: URL
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Browser
+      validations:
+          required: true
+
+    - type: dropdown
+      id: plugins
+      attributes:
+          label: Screen Size
+          multiple: true
+          options:
+              - 'Desktop'
+              - 'Tablet'
+              - 'Mobile'
+      validations:
+          required: true
+
+    - type: textarea
+      attributes:
+          label: Additional Info
+      validations:
+          required: true
