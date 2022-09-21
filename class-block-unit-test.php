@@ -688,22 +688,21 @@ class Block_Unit_Test {
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:core-embed/vimeo {"url":"https://vimeo.com/259230327","align":"wide","type":"video","providerNameSlug":"vimeo"} -->
-				<figure class="wp-block-embed-vimeo wp-block-embed alignwide is-type-video is-provider-vimeo">
-					https://vimeo.com/259230327
-					<figcaption>Videos can have captions too!</figcaption>
-				</figure>
-				<!-- /wp:core-embed/vimeo -->
+				<!-- wp:embed {"url":"https://vimeo.com/259230327","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/259230327
+				</div></figure>
+				<!-- /wp:embed -->
 
 				<!-- wp:heading {"level":3} -->
 				<h3>Full Width</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:core-embed/vimeo {"url":"https://vimeo.com/243191812","align":"full","type":"video","providerNameSlug":"vimeo"} -->
-				<figure class="wp-block-embed-vimeo wp-block-embed alignfull is-type-video is-provider-vimeo">
-					https://vimeo.com/243191812
-				</figure>
-				<!-- /wp:core-embed/vimeo -->
+				<!-- wp:embed {"url":"https://vimeo.com/243191812","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"full","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed alignfull is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/243191812
+				</div></figure>
+				<!-- /wp:embed -->
 			';
 		}
 
