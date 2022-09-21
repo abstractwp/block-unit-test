@@ -60,6 +60,11 @@ Thank you so much for your support!
 
 ## :scroll: Changelog
 
+### 1.0.8 version
+
+- Update: Gallery blocks structure.
+- Update: Embed video from **wp:core-embed** to **wp:embed**.
+
 ### 1.0.7 version
 
 - Fix: Broken some blocks and add missing blocks.
