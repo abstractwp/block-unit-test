@@ -1375,8 +1375,8 @@ class Block_Unit_Test {
 				<h2>Media &amp; Text</h2>
 				<!-- /wp:heading -->
 
-				<!-- wp:media-text -->
-				<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
+				<!-- wp:media-text {"mediaType":"image"} -->
+				<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
 				<p class="has-large-font-size">Large text</p>
 				<!-- /wp:paragraph -->
 
