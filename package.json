@@ -12,14 +12,14 @@
   "description": "The Block Unit Test plugin creates a page for WordPress theme authors to prepare their WordPress themes for Gutenberg. Test nearly every variation of core blocks within Gutenberg.",
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-cache": "^1.0.2",
+    "gulp": "^4.0.2",
+    "gulp-cache": "^1.1.3",
     "gulp-copy": "^1.0.1",
-    "gulp-notify": "^3.2.0",
     "gulp-if": "^2.0.2",
-    "gulp-rename": "^1.2.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-replace-task": "^0.11.0",
     "gulp-wp-pot": "^1.2.2",
-    "gulp-zip": "^4.0.0"
+    "gulp-zip": "^4.2.0"
   }
 }
