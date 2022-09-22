@@ -6,10 +6,10 @@
  * Author: AbstractWP
  * Author URI: https://www.abstractwp.com/
  * Tags: gutenberg, editor, block, unit test, coblocks
- * Version: 1.0.7
+ * Version: 1.0.8
  * Text Domain: 'block-unit-test'
  * Domain Path: languages
- * Tested up to: 6.0.1
+ * Tested up to: 6.0.2
  *
  * Block Unit Test is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -688,22 +688,21 @@ class Block_Unit_Test {
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:core-embed/vimeo {"url":"https://vimeo.com/259230327","align":"wide","type":"video","providerNameSlug":"vimeo"} -->
-				<figure class="wp-block-embed-vimeo wp-block-embed alignwide is-type-video is-provider-vimeo">
-					https://vimeo.com/259230327
-					<figcaption>Videos can have captions too!</figcaption>
-				</figure>
-				<!-- /wp:core-embed/vimeo -->
+				<!-- wp:embed {"url":"https://vimeo.com/259230327","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/259230327
+				</div></figure>
+				<!-- /wp:embed -->
 
 				<!-- wp:heading {"level":3} -->
 				<h3>Full Width</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:core-embed/vimeo {"url":"https://vimeo.com/243191812","align":"full","type":"video","providerNameSlug":"vimeo"} -->
-				<figure class="wp-block-embed-vimeo wp-block-embed alignfull is-type-video is-provider-vimeo">
-					https://vimeo.com/243191812
-				</figure>
-				<!-- /wp:core-embed/vimeo -->
+				<!-- wp:embed {"url":"https://vimeo.com/243191812","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"full","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed alignfull is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/243191812
+				</div></figure>
+				<!-- /wp:embed -->
 			';
 		}
 
@@ -787,15 +786,14 @@ class Block_Unit_Test {
 			<p>Below we have a Gallery Block inserted with two columns and two images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery -->
-				<ul class="wp-block-gallery alignnone columns-2 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+			<!-- wp:gallery {"columns":2,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-2 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -806,18 +804,18 @@ class Block_Unit_Test {
 			<p>Below we have a Gallery Block inserted with three columns and three images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery -->
-			<ul class="wp-block-gallery alignnone columns-3 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":3,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -828,21 +826,22 @@ class Block_Unit_Test {
 			<p>Below we have a Gallery Block inserted with four columns and four images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery {"columns":4} -->
-			<ul class="wp-block-gallery alignnone columns-4 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":4,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-4 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -853,24 +852,26 @@ class Block_Unit_Test {
 			<p>Below we have a Gallery Block inserted with five columns and five images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery {"columns":5} -->
-			<ul class="wp-block-gallery alignnone columns-5 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":5,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-5 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -881,24 +882,26 @@ class Block_Unit_Test {
 			<p>Let us switch things up a bit. Now we have a Gallery Block inserted with four columns and five images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery {"columns":4} -->
-			<ul class="wp-block-gallery alignnone columns-4 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":4,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-4 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -909,24 +912,26 @@ class Block_Unit_Test {
 			<p>Now we have a Gallery Block inserted with three columns and five images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery {"columns":3} -->
-			<ul class="wp-block-gallery alignnone columns-3 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":3,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:paragraph -->
@@ -937,24 +942,26 @@ class Block_Unit_Test {
 			<h3>Two Column, Five Images</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:gallery {"columns":2} -->
-			<ul class="wp-block-gallery alignnone columns-2 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":2,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-2 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading {"level":3} -->
@@ -965,21 +972,22 @@ class Block_Unit_Test {
 			<p>Below you will find a Gallery Block inserted with three columns and four images.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:gallery {"columns":3} -->
-			<ul class="wp-block-gallery alignnone columns-3 is-cropped">
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-				<li class="blocks-gallery-item">
-					<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-				</li>
-			</ul>
+			<!-- wp:gallery {"columns":3,"linkTo":"none"} -->
+			<figure class="wp-block-gallery alignnone has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+			<!-- /wp:image --></figure>
 			<!-- /wp:gallery -->
 
 			<!-- wp:heading -->
@@ -1141,17 +1149,14 @@ class Block_Unit_Test {
 				<p>Below we have a Gallery Block inserted with two columns and two images. It is set to display with the new Wide alignment (if the theme supports it).</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide"} -->
-				<ul class="wp-block-gallery alignwide columns-2 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" />
-							<figcaption>Captions for Gallery Images</figcaption>
-						</figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":2,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-2 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1162,18 +1167,18 @@ class Block_Unit_Test {
 				<p>Below we have a Gallery Block inserted with three columns and three images. It is also set to display with the new Wide alignment.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide"} -->
-				<ul class="wp-block-gallery alignwide columns-3 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":3,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1184,21 +1189,22 @@ class Block_Unit_Test {
 				<p>Below we have a Gallery Block inserted with four columns and four images. It is also set to display with the new Wide alignment.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":4} -->
-				<ul class="wp-block-gallery alignwide columns-4 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":4,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-4 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1209,24 +1215,26 @@ class Block_Unit_Test {
 				<p>Below we have a Gallery Block inserted with five columns and five images. It is also set to display with the new Wide alignment.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":5} -->
-				<ul class="wp-block-gallery alignwide columns-5 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":5,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-5 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1237,24 +1245,26 @@ class Block_Unit_Test {
 				<p>Let us switch things up a bit. Now we have a Gallery Block inserted with four columns and five images, also displayed with the new Wide alignment option.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":4} -->
-				<ul class="wp-block-gallery alignwide columns-4 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":4,"linkTo":"none","className":"alignwide"} -->
+				<figure class="wp-block-gallery has-nested-images columns-4 is-cropped alignwide"><!-- wp:image {"linkDestination":"none"} -->
+				<figure class="wp-block-image"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"linkDestination":"none"} -->
+				<figure class="wp-block-image"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"linkDestination":"none"} -->
+				<figure class="wp-block-image"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"linkDestination":"none"} -->
+				<figure class="wp-block-image"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"linkDestination":"none"} -->
+				<figure class="wp-block-image"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1265,24 +1275,22 @@ class Block_Unit_Test {
 				<p>Now we have a Gallery Block inserted with three columns and five images displayed with the new Wide alignment option.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":3} -->
-				<ul class="wp-block-gallery alignwide columns-3 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":3,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1293,24 +1301,26 @@ class Block_Unit_Test {
 				<p>Below you will find a Gallery Block inserted with two columns and five images also displayed with the new Wide alignment option.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":2} -->
-				<ul class="wp-block-gallery alignwide columns-2 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":2,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-2 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1321,21 +1331,22 @@ class Block_Unit_Test {
 				<p>Below you will find a Gallery Block inserted with three columns and four images, also displayed with the new Wide alignment option.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"wide","columns":3} -->
-				<ul class="wp-block-gallery alignwide columns-3 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":3,"linkTo":"none","align":"wide"} -->
+				<figure class="wp-block-gallery alignwide has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading {"level":3} -->
@@ -1346,29 +1357,26 @@ class Block_Unit_Test {
 				<p>Below you will find a Gallery Block inserted with three columns and four images, also displayed with the new Wide alignment option.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:gallery {"align":"full","columns":3} -->
-				<ul class="wp-block-gallery alignfull columns-3 is-cropped">
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" data-id="2124" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-					<li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
-					</li>
-				</ul>
+				<!-- wp:gallery {"columns":3,"linkTo":"none","align":"full"} -->
+				<figure class="wp-block-gallery alignfull has-nested-images columns-3 is-cropped"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+				<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
+				<!-- /wp:image --></figure>
 				<!-- /wp:gallery -->
 
 				<!-- wp:heading -->
 				<h2>Media &amp; Text</h2>
 				<!-- /wp:heading -->
 
-				<!-- wp:media-text -->
-				<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
+				<!-- wp:media-text {"mediaType":"image"} -->
+				<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
 				<p class="has-large-font-size">Large text</p>
 				<!-- /wp:paragraph -->
 
