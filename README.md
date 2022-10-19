@@ -60,6 +60,10 @@ Thank you so much for your support!
 
 ## :scroll: Changelog
 
+### 1.0.9 version
+
+- Update: Pullquote blocks structure.
+
 ### 1.0.8 version
 
 - Update: Gallery blocks structure.
