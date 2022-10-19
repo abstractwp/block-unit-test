@@ -6,7 +6,7 @@
  * Author: AbstractWP
  * Author URI: https://www.abstractwp.com/
  * Tags: gutenberg, editor, block, unit test, coblocks
- * Version: 1.0.8
+ * Version: 1.0.9
  * Text Domain: 'block-unit-test'
  * Domain Path: languages
  * Tested up to: 6.0.2
@@ -543,8 +543,8 @@ class Block_Unit_Test {
 			<!-- /wp:paragraph -->
 
 			<!-- wp:pullquote {"align":"center"} -->
-			<blockquote class="wp-block-pullquote aligncenter">
-				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere est at lobortis.</p><cite>Rich Tabor, ThemeBeans.com</cite></blockquote>
+			<figure class="wp-block-pullquote aligncenter"><blockquote>
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere est at lobortis.</p><cite>Rich Tabor, ThemeBeans.com</cite></blockquote></figure>
 			<!-- /wp:pullquote -->
 		';
 
@@ -559,8 +559,8 @@ class Block_Unit_Test {
 				<!-- /wp:paragraph -->
 
 				<!-- wp:pullquote {"align":"wide"} -->
-				<blockquote class="wp-block-pullquote alignwide">
-					<p>Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed ibendum nulla sed consectetur. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote>
+				<figure class="wp-block-pullquote alignwide"><blockquote>
+					<p>Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed ibendum nulla sed consectetur. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote></figure>
 				<!-- /wp:pullquote -->
 
 				<!-- wp:heading {"level":3} -->
@@ -572,8 +572,8 @@ class Block_Unit_Test {
 				<!-- /wp:paragraph -->
 
 				<!-- wp:pullquote {"align":"full"} -->
-				<blockquote class="wp-block-pullquote alignfull">
-					<p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote>
+				<figure class="wp-block-pullquote alignfull"><blockquote>
+					<p>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. </p><cite>Rich Tabor, Founder at ThemeBeans.com</cite></blockquote></figure>
 				<!-- /wp:pullquote -->
 
 				<!-- wp:paragraph -->
@@ -583,18 +583,16 @@ class Block_Unit_Test {
 		}
 
 		$content .= '
-			<!-- wp:pullquote {"align":"left"} -->
-			<blockquote class="wp-block-pullquote alignleft">
-				<p>Here we have a left-aligned pullquote.</p><cite>Rich Tabor</cite></blockquote>
+			<!-- wp:pullquote {"align":"left","className":"alignleft"} -->
+			<figure class="wp-block-pullquote alignleft"><blockquote><p>Here we have a left-aligned pullquote.</p><cite>Rich Tabor</cite></blockquote></figure>
 			<!-- /wp:pullquote -->
 
 			<!-- wp:paragraph -->
 			<p>Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper.</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:pullquote {"align":"right"} -->
-			<blockquote class="wp-block-pullquote alignright">
-				<p>Here we have a right-aligned pullquote.</p><cite>Rich Tabor</cite></blockquote>
+			<!-- wp:pullquote {"align":"right","className":"alignright"} -->
+			<figure class="wp-block-pullquote alignright"><blockquote><p>Here we have a right-aligned pullquote.</p><cite>Rich Tabor</cite></blockquote></figure>
 			<!-- /wp:pullquote -->
 
 			<!-- wp:paragraph -->
