@@ -686,9 +686,9 @@ class Block_Unit_Test {
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:embed {"url":"https://vimeo.com/259230327","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-				https://vimeo.com/259230327
+				<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/253989945
 				</div></figure>
 				<!-- /wp:embed -->
 
@@ -696,9 +696,9 @@ class Block_Unit_Test {
 				<h3>Full Width</h3>
 				<!-- /wp:heading -->
 
-				<!-- wp:embed {"url":"https://vimeo.com/243191812","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"full","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"full","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
 				<figure class="wp-block-embed alignfull is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-				https://vimeo.com/243191812
+				https://vimeo.com/253989945
 				</div></figure>
 				<!-- /wp:embed -->
 			';
