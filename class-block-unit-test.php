@@ -726,13 +726,24 @@ class Block_Unit_Test {
 
 		$content .= '
 			<!-- wp:heading {"level":2} -->
-			<h2>' . esc_html__( 'Cover Image Block', '@@textdomain' ) . '</h2>
+			<h2>' . esc_html__( 'Cover Blocks', '@@textdomain' ) . '</h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>Check out the positioning and styling of the cover image core block. We will check the wide and full alignments, as well as left/right.</p>
+			<p>Check out the positioning and styling of the cover core block. We will check the wide and full alignments, as well as left/right.</p>
 			<!-- /wp:paragraph -->
 
+			<!-- wp:cover {"overlayColor":"secondary","isDark":false} -->
+			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
+
+			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":16,"dimRatio":50} -->
+			<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+			<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:cover -->
 		';
 
 		if ( get_theme_support( 'align-wide' ) ) {
@@ -1006,128 +1017,7 @@ class Block_Unit_Test {
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
 			<figure class="wp-block-image size-large"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" /></figure>
 			<!-- /wp:image --></figure>
-			<!-- /wp:gallery -->
-
-			<!-- wp:heading -->
-			<h2>Media &amp; Text</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here are examples of the core Gutenberg media &amp; text block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:heading {"level":3} -->
-			<h3>Text on right</h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:media-text {"align":"","mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
-			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
-			<!-- /wp:paragraph --></div></div>
-			<!-- /wp:media-text -->
-
-			<!-- wp:separator -->
-			<hr class="wp-block-separator has-alpha-channel-opacity"/>
-			<!-- /wp:separator -->
-
-			<!-- wp:heading {"level":3} -->
-			<h3>Text on left</h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:media-text {"align":"","mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
-			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
-			<!-- /wp:paragraph --></div></div>
-			<!-- /wp:media-text -->
-
-			<!-- wp:heading -->
-			<h2>Calendar</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is example of the core Gutenberg calendar block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:calendar /-->
-
-			<!-- wp:heading -->
-			<h2>Latest Comments</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is example of the core Gutenberg latest comments block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:latest-comments /-->
-
-			<!-- wp:heading -->
-			<h2>Search block</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is example of the core Gutenberg search block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
-
-			<!-- wp:heading -->
-			<h2>Latest posts block</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is example of the core Gutenberg Latest Posts block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:latest-posts {"displayPostContent":true,"excerptLength":25,"displayAuthor":true,"displayPostDate":true,"displayFeaturedImage":true} /-->
-
-			<!-- wp:heading -->
-			<h2>Social Icons block</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here is example of the core Gutenberg Social Icons block.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:social-links {"openInNewTab":true,"showLabels":true} -->
-			<ul class="wp-block-social-links has-visible-labels">
-
-			<!-- wp:social-link {"url":"#","service":"facebook"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"twitter"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"youtube"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"instagram"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"tiktok"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"telegram"} /-->
-
-			<!-- wp:social-link {"url":"#","service":"skype"} /--></ul>
-			<!-- /wp:social-links -->
-
-			<!-- wp:heading -->
-			<h2>Cover block</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here are examples of the core Gutenberg Cover blocks.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:cover {"overlayColor":"secondary","isDark":false} -->
-			<div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
-			<p class="has-text-align-center has-large-font-size">This is cover block with color background</p>
-			<!-- /wp:paragraph --></div></div>
-			<!-- /wp:cover -->
-
-			<!-- wp:cover {"url":"' . esc_url( $this->url . '/placeholder.jpg' ) . '","id":16,"dimRatio":50} -->
-			<div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-16" alt="" src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
-			<p class="has-text-align-center has-large-font-size">This is background image cover block</p>
-			<!-- /wp:paragraph --></div></div>
-			<!-- /wp:cover -->
-		';
+			<!-- /wp:gallery -->';
 
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
@@ -1384,6 +1274,107 @@ class Block_Unit_Test {
 				<!-- /wp:media-text -->
 			';
 		}
+		$content .= '
+			<!-- wp:heading -->
+			<h2>Media &amp; Text</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here are examples of the core Gutenberg media &amp; text block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on right</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"align":"","mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
+
+			<!-- wp:separator -->
+			<hr class="wp-block-separator has-alpha-channel-opacity"/>
+			<!-- /wp:separator -->
+
+			<!-- wp:heading {"level":3} -->
+			<h3>Text on left</h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:media-text {"align":"","mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
+			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:media-text -->
+
+			<!-- wp:heading -->
+			<h2>Calendar</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg calendar block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:calendar /-->
+
+			<!-- wp:heading -->
+			<h2>Latest Comments</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg latest comments block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-comments /-->
+
+			<!-- wp:heading -->
+			<h2>Search block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg search block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:search {"label":"Search","buttonText":"Search"} /-->
+
+			<!-- wp:heading -->
+			<h2>Latest posts block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Latest Posts block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:latest-posts {"displayPostContent":true,"excerptLength":25,"displayAuthor":true,"displayPostDate":true,"displayFeaturedImage":true} /-->
+
+			<!-- wp:heading -->
+			<h2>Social Icons block</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph -->
+			<p>Here is example of the core Gutenberg Social Icons block.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:social-links {"openInNewTab":true,"showLabels":true} -->
+			<ul class="wp-block-social-links has-visible-labels">
+
+			<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"twitter"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"youtube"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"tiktok"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"telegram"} /-->
+
+			<!-- wp:social-link {"url":"#","service":"skype"} /--></ul>
+			<!-- /wp:social-links -->
+		';
 		return apply_filters( 'block_unit_test_content', $content );
 	}
 }
