@@ -675,7 +675,7 @@ class Block_Unit_Test {
 		if ( get_theme_support( 'align-wide' ) ) {
 			$content .= '
 				<!-- wp:heading {"level":2} -->
-				<h2>' . esc_html__( 'Video Block', '@@textdomain' ) . '</h2>
+				<h2>' . esc_html__( 'Video Blocks', '@@textdomain' ) . '</h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph -->
@@ -683,11 +683,31 @@ class Block_Unit_Test {
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"level":3} -->
+				<h3>' . esc_html__( 'Youtube video', '@@textdomain' ) . '</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:embed {"url":"https://www.youtube.com/watch?v=a3ICNMQW7Ok","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://www.youtube.com/watch?v=a3ICNMQW7Ok
+				</div></figure>
+				<!-- /wp:embed -->
+
+				<!-- wp:heading {"level":3} -->
+				<h3>' . esc_html__( 'Vimeo video', '@@textdomain' ) . '</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+				<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+				https://vimeo.com/253989945
+				</div></figure>
+				<!-- /wp:embed -->
+
+				<!-- wp:heading {"level":3} -->
 				<h3>' . esc_html__( 'Wide aligned', '@@textdomain' ) . '</h3>
 				<!-- /wp:heading -->
 
 				<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo"><div class="wp-block-embed__wrapper">
+				<figure class="wp-block-embed alignwide is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 				https://vimeo.com/253989945
 				</div></figure>
 				<!-- /wp:embed -->
@@ -1039,26 +1059,6 @@ class Block_Unit_Test {
 			<!-- /wp:paragraph -->
 
 			<!-- wp:latest-comments /-->
-
-			<!-- wp:heading -->
-			<h2>WordPress TV blocks</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph -->
-			<p>Here are examples of the core Gutenberg WordPress tv blocks.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:embed {"url":"https://www.youtube.com/watch?v=a3ICNMQW7Ok","type":"video","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-			<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-			https://www.youtube.com/watch?v=a3ICNMQW7Ok
-			</div></figure>
-			<!-- /wp:embed -->
-
-			<!-- wp:embed {"url":"https://vimeo.com/253989945","type":"video","providerNameSlug":"vimeo","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-			<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-			https://vimeo.com/253989945
-			</div></figure>
-			<!-- /wp:embed -->
 
 			<!-- wp:heading -->
 			<h2>Search block</h2>
