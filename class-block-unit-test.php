@@ -653,15 +653,15 @@ class Block_Unit_Test {
 			<figure class="wp-block-image alignleft is-resized"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-2117" width="275" height="196" /></figure>
 			<!-- /wp:image -->
 
-			<!-- wp:paragraph -->
-			<p><strong>Left aligned:</strong> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
-			<!-- /wp:paragraph -->
-
 			<!-- wp:image {"id":2117,"align":"right","width":281,"height":200} -->
 			<figure class="wp-block-image alignright is-resized"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt="" class="wp-image-2117" width="281" height="200" />
 				<figcaption>This one is captioned</figcaption>
 			</figure>
 			<!-- /wp:image -->
+
+			<!-- wp:paragraph -->
+			<p><strong>Left aligned:</strong> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
+			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
 			<p>Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Nullam quis risus.</p>
