@@ -121,6 +121,9 @@ class Block_Unit_Test {
 		<?php
 	}
 
+	/**
+	 * Block editor bug fixes.
+	 */
 	public function apply_styles_fixed() {
 		// Apply bug fixes.
 		$but_options = get_option( 'but-options' );
@@ -131,8 +134,8 @@ class Block_Unit_Test {
 			?>
 			<style type="text/css">
 				<?php
-				if ( is_plugin_active( 'twentig/twentig.php' ) && $screen->is_block_editor && 'Twenty Twenty-One' === $wp_theme->Name ) {
-					echo ':root .editor-styles-wrapper {' . twentig_twentyone_generate_color_variables() . '}';
+				if ( is_plugin_active( 'twentig/twentig.php' ) && $screen->is_block_editor && 'Twenty Twenty-One' === $wp_theme->Name ) { // phpcs:ignore.
+					echo ':root .editor-styles-wrapper {' . twentig_twentyone_generate_color_variables() . '}'; // phpcs:ignore.
 				}
 				?>
 			</style>
@@ -143,7 +146,7 @@ class Block_Unit_Test {
 			?>
 			<style type="text/css">
 				<?php
-				if ( $screen->is_block_editor && 'Twenty Twenty' === $wp_theme->Name ) {
+				if ( $screen->is_block_editor && 'Twenty Twenty' === $wp_theme->Name ) { // phpcs:ignore.
 					echo '
 					.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
 						text-decoration: underline;
@@ -252,7 +255,7 @@ class Block_Unit_Test {
 		);
 
 		$wp_theme = wp_get_theme();
-		if ( 'Twenty Twenty' === $wp_theme->Name ) {
+		if ( 'Twenty Twenty' === $wp_theme->Name ) { // phpcs:ignore.
 			add_settings_field(
 				'2020',
 				'Fixes 2020 theme issues',
@@ -263,7 +266,7 @@ class Block_Unit_Test {
 		}
 
 		add_settings_field(
-			'but_wordpress', // phpcs: ignore.
+			'but_wordpress', // phpcs:ignore.
 			'Fixes WordPress Blocks issues',
 			array( $this, 'but_wp_callback' ),
 			'but-settings',
@@ -306,7 +309,7 @@ class Block_Unit_Test {
 	public function but_twentig_callback() {
 		$is_twentig_fixes = $this->options['twentig'] ? 'checked' : '';
 		?>
-		<input type="checkbox" id="2021theme" <?php echo $is_twentig_fixes; ?> name="but-options[twentig]" value="twentig" />
+		<input type="checkbox" id="2021theme" <?php echo esc_html( $is_twentig_fixes ); ?> name="but-options[twentig]" value="twentig" />
 		<?php
 	}
 
@@ -316,7 +319,7 @@ class Block_Unit_Test {
 	public function but_2020_theme_callback() {
 		$is_2020_fixes = $this->options['2020'] ? 'checked' : '';
 		?>
-		<input type="checkbox" id="2020theme" <?php echo $is_2020_fixes; ?> name="but-options[2020]" value="2020" />
+		<input type="checkbox" id="2020theme" <?php echo esc_html( $is_2020_fixes ); ?> name="but-options[2020]" value="2020" />
 		<?php
 	}
 
@@ -326,7 +329,7 @@ class Block_Unit_Test {
 	public function but_wp_callback() {
 		$is_wordpress_fixes = $this->options['but_wordpress'] ? 'checked' : '';
 		?>
-		<input type="checkbox" id="but_wordpress" <?php echo $is_wordpress_fixes; ?> name="but-options[but_wordpress]" value="but_wordpress" />
+		<input type="checkbox" id="but_wordpress" <?php echo esc_html( $is_wordpress_fixes ); ?> name="but-options[but_wordpress]" value="but_wordpress" />
 		<?php
 	}
 
