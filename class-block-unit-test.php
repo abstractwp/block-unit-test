@@ -85,6 +85,9 @@ class Block_Unit_Test {
 
 		add_action( 'admin_head', array( $this, 'apply_styles_fixed' ) );
 		add_action( 'wp_head', array( $this, 'apply_styles_fixed_frontend' ) );
+
+		// Filters.
+		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 	}
 
 	/**
@@ -1629,6 +1632,30 @@ class Block_Unit_Test {
 			<!-- /wp:social-links -->
 		';
 		return apply_filters( 'block_unit_test_content', $content );
+	}
+
+	/**
+	 * Plugin row meta links
+	 *
+	 * @param array|array   $input already defined meta links.
+	 * @param string|string $file plugin file path and name being processed.
+	 * @return array $input
+	 */
+	public function plugin_row_meta( $input, $file ) {
+
+		if ( 'block-unit-test/class-block-unit-test.php' !== $file ) {
+			return $input;
+		}
+
+		$url = site_url( '/wp-admin/tools.php?page=but-settings' );
+
+		$links = array(
+			'<a href="' . esc_url( $url ) . '">' . esc_html__( 'BUT Advanced settings', 'block-unit-test' ) . '</a>',
+		);
+
+		$input = array_merge( $input, $links );
+
+		return $input;
 	}
 }
 Block_Unit_Test::register();
