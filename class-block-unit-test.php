@@ -84,6 +84,7 @@ class Block_Unit_Test {
 		add_action( 'admin_init', array( $this, 'page_init' ) );
 
 		add_action( 'admin_head', array( $this, 'apply_styles_fixed' ) );
+		add_action( 'wp_head', array( $this, 'apply_styles_fixed_frontend' ) );
 	}
 
 	/**
@@ -123,8 +124,8 @@ class Block_Unit_Test {
 	public function apply_styles_fixed() {
 		// Apply bug fixes.
 		$but_options = get_option( 'but-options' );
-		$screen = get_current_screen();
-		$wp_theme = wp_get_theme();
+		$screen      = get_current_screen();
+		$wp_theme    = wp_get_theme();
 
 		if ( $but_options['twentig'] ) {
 			?>
@@ -194,6 +195,35 @@ class Block_Unit_Test {
 			</style>
 			<?php
 		}
+
+		if ( $but_options['wordpress'] ) {
+			?>
+			<style type="text/css">
+				.editor-styles-wrapper .wp-block-quote.is-large:not(.is-style-plain) p,
+				.editor-styles-wrapper .wp-block-quote.is-style-large:not(.is-style-plain) p {
+					font-size: 1.5em;
+					font-style: italic;
+					line-height: 1.6;
+				}
+			</style>
+			<?php
+		}
+	}
+
+	/**
+	 * Fixed know issue on frontend.
+	 */
+	public function apply_styles_fixed_frontend() {
+		$but_options = get_option( 'but-options' );
+		if ( $but_options['wordpress'] ) {
+			?>
+			<style type="text/css">
+				.wp-block-quote.is-large:not(.is-style-plain) cite, .wp-block-quote.is-large:not(.is-style-plain) footer, .wp-block-quote.is-style-large:not(.is-style-plain) cite, .wp-block-quote.is-style-large:not(.is-style-plain) footer {
+					display: block;
+				}
+			</style>
+			<?php
+		}
 	}
 
 	/**
@@ -231,6 +261,14 @@ class Block_Unit_Test {
 				'bug-fixes'
 			);
 		}
+
+		add_settings_field(
+			'but_wordpress', // phpcs: ignore.
+			'Fixes WordPress Blocks issues',
+			array( $this, 'but_wp_callback' ),
+			'but-settings',
+			'bug-fixes'
+		);
 	}
 
 	/**
@@ -246,6 +284,10 @@ class Block_Unit_Test {
 
 		if ( isset( $input['2020'] ) ) {
 			$new_input['2020'] = sanitize_text_field( $input['2020'] );
+		}
+
+		if ( isset( $input['but_wordpress'] ) ) {
+			$new_input['but_wordpress'] = sanitize_text_field( $input['but_wordpress'] );
 		}
 
 		return $new_input;
@@ -268,13 +310,23 @@ class Block_Unit_Test {
 		<?php
 	}
 
-		/**
+	/**
 	 * Get the settings option array and print one of its values.
 	 */
 	public function but_2020_theme_callback() {
 		$is_2020_fixes = $this->options['2020'] ? 'checked' : '';
 		?>
 		<input type="checkbox" id="2020theme" <?php echo $is_2020_fixes; ?> name="but-options[2020]" value="2020" />
+		<?php
+	}
+
+	/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_wp_callback() {
+		$is_wordpress_fixes = $this->options['but_wordpress'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="but_wordpress" <?php echo $is_wordpress_fixes; ?> name="but-options[but_wordpress]" value="but_wordpress" />
 		<?php
 	}
 
