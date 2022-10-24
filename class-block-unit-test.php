@@ -78,6 +78,122 @@ class Block_Unit_Test {
 		add_action( 'admin_init', array( $this, 'create_block_unit_test_page' ) );
 		add_action( 'admin_init', array( $this, 'update_block_unit_test_page' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrade_completed' ), 10, 2 );
+
+		// Settings page.
+		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'page_init' ) );
+
+		add_action( 'admin_head', array( $this, 'apply_styles_fixed' ) );
+	}
+
+	/**
+	 * Add options page.
+	 */
+	public function add_plugin_page() {
+		// This page will be under "Tools".
+		add_management_page(
+			'Block Unit Test Advanced',
+			'Block Unit Test Advanced',
+			'manage_options',
+			'but-settings',
+			array( $this, 'create_admin_page' )
+		);
+	}
+
+	/**
+	 * Options page callback.
+	 */
+	public function create_admin_page() {
+		// Set class property.
+		$this->options = get_option( 'but-options' );
+		?>
+		<div class="wrap">
+			<h1>Block Unit Test Advanced</h1>
+			<form method="post" action="options.php" id="but-settings-form">
+				<?php
+					settings_fields( 'but-options' );
+					do_settings_sections( 'but-settings' );
+					submit_button( esc_html__( 'Submit', 'block-unit-test' ) );
+				?>
+			</form>
+		</div>
+		<?php
+	}
+
+	public function apply_styles_fixed() {
+		// Apply bug fixes.
+		$but_options = get_option( 'but-options' );
+		$screen = get_current_screen();
+		$wp_theme = wp_get_theme();
+
+		if ( $but_options['twentig'] ) {
+			?>
+			<style type="text/css">
+				<?php
+				if ( is_plugin_active( 'twentig/twentig.php' ) && $screen->is_block_editor && 'Twenty Twenty-One' === $wp_theme->Name ) {
+					echo ':root .editor-styles-wrapper {' .twentig_twentyone_generate_color_variables() . '}';
+				}
+				?>
+			</style>
+			<?php
+		}
+	}
+
+	/**
+	 * Register and add settings.
+	 */
+	public function page_init() {
+		register_setting(
+			'but-options',
+			'but-options',
+			array( $this, 'sanitize' )
+		);
+
+		add_settings_section(
+			'bug-fixes',
+			'Block editor issues',
+			array( $this, 'print_section_info' ),
+			'but-settings'
+		);
+
+		add_settings_field(
+			'twentig',
+			'Fixes twentig issues',
+			array( $this, 'but_twentig_callback' ),
+			'but-settings',
+			'bug-fixes'
+		);
+	}
+
+	/**
+	 * Sanitize each setting field as needed.
+	 *
+	 * @param array $input Contains all settings fields as array keys.
+	 */
+	public function sanitize( $input ) {
+		$new_input = array();
+		if ( isset( $input['twentig'] ) ) {
+			$new_input['twentig'] = sanitize_text_field( $input['twentig'] );
+		}
+
+		return $new_input;
+	}
+
+	/**
+	 * Print the Section text.
+	 */
+	public function print_section_info() {
+		print 'Fixes known issues';
+	}
+
+	/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_twentig_callback() {
+		$is_twentig_fixes = $this->options['twentig'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="2021theme" <?php echo $is_twentig_fixes; ?> name="but-options[twentig]" value="twentig" />
+		<?php
 	}
 
 	/**
