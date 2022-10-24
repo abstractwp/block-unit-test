@@ -131,7 +131,64 @@ class Block_Unit_Test {
 			<style type="text/css">
 				<?php
 				if ( is_plugin_active( 'twentig/twentig.php' ) && $screen->is_block_editor && 'Twenty Twenty-One' === $wp_theme->Name ) {
-					echo ':root .editor-styles-wrapper {' .twentig_twentyone_generate_color_variables() . '}';
+					echo ':root .editor-styles-wrapper {' . twentig_twentyone_generate_color_variables() . '}';
+				}
+				?>
+			</style>
+			<?php
+		}
+
+		if ( $but_options['2020'] ) {
+			?>
+			<style type="text/css">
+				<?php
+				if ( $screen->is_block_editor && 'Twenty Twenty' === $wp_theme->Name ) {
+					echo '
+					.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
+						text-decoration: underline;
+					}
+					.editor-styles-wrapper ul.block-editor-block-list__block, .editor-styles-wrapper ol.block-editor-block-list__block, .editor-styles-wrapper ul ul, .editor-styles-wrapper ol ul,
+					hr.wp-block-separator.is-style-wide,
+					.editor-styles-wrapper .wp-block-latest-comments {
+						margin-left: auto;
+						margin-right: auto;
+					}
+					.editor-styles-wrapper ul.block-editor-block-list__block, .editor-styles-wrapper ol.block-editor-block-list__block, .editor-styles-wrapper ul ul, .editor-styles-wrapper ol ul {
+						padding-left: 0;
+					}
+					@media (min-width: 600px) {
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-2 li {
+							width: calc((100% / 2) - 1.25em + (1.25em / 2));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-2 li:nth-child(2n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-3 li {
+							width: calc((100% / 3) - 1.25em + (1.25em / 3));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-3 li:nth-child(3n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-4 li {
+							width: calc((100% / 4) - 1.25em + (1.25em / 4));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-4 li:nth-child(4n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-5 li {
+							width: calc((100% / 5) - 1.25em + (1.25em / 5));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-5 li:nth-child(5n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-6 li {
+							width: calc((100% / 6) - 1.25em + (1.25em / 6));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-6 li:nth-child(6n) {
+							margin-right: 0;
+						}
+					}
+					';
 				}
 				?>
 			</style>
@@ -163,6 +220,17 @@ class Block_Unit_Test {
 			'but-settings',
 			'bug-fixes'
 		);
+
+		$wp_theme = wp_get_theme();
+		if ( 'Twenty Twenty' === $wp_theme->Name ) {
+			add_settings_field(
+				'2020',
+				'Fixes 2020 theme issues',
+				array( $this, 'but_2020_theme_callback' ),
+				'but-settings',
+				'bug-fixes'
+			);
+		}
 	}
 
 	/**
@@ -174,6 +242,10 @@ class Block_Unit_Test {
 		$new_input = array();
 		if ( isset( $input['twentig'] ) ) {
 			$new_input['twentig'] = sanitize_text_field( $input['twentig'] );
+		}
+
+		if ( isset( $input['2020'] ) ) {
+			$new_input['2020'] = sanitize_text_field( $input['2020'] );
 		}
 
 		return $new_input;
@@ -193,6 +265,16 @@ class Block_Unit_Test {
 		$is_twentig_fixes = $this->options['twentig'] ? 'checked' : '';
 		?>
 		<input type="checkbox" id="2021theme" <?php echo $is_twentig_fixes; ?> name="but-options[twentig]" value="twentig" />
+		<?php
+	}
+
+		/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_2020_theme_callback() {
+		$is_2020_fixes = $this->options['2020'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="2020theme" <?php echo $is_2020_fixes; ?> name="but-options[2020]" value="2020" />
 		<?php
 	}
 
