@@ -690,6 +690,12 @@ class Block_Unit_Test {
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius.</p>
 			<!-- /wp:paragraph -->
 
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Outline button</a></div>
+			<!-- /wp:button --></div>
+			<!-- /wp:buttons -->
+
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
 			<!-- /wp:separator -->
