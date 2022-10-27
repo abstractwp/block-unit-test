@@ -78,6 +78,262 @@ class Block_Unit_Test {
 		add_action( 'admin_init', array( $this, 'create_block_unit_test_page' ) );
 		add_action( 'admin_init', array( $this, 'update_block_unit_test_page' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrade_completed' ), 10, 2 );
+
+		// Settings page.
+		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'page_init' ) );
+
+		add_action( 'admin_head', array( $this, 'apply_styles_fixed' ) );
+		add_action( 'wp_head', array( $this, 'apply_styles_fixed_frontend' ) );
+
+		// Filters.
+		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+	}
+
+	/**
+	 * Add options page.
+	 */
+	public function add_plugin_page() {
+		// This page will be under "Tools".
+		add_management_page(
+			'Block Unit Test Advanced',
+			'Block Unit Test Advanced',
+			'manage_options',
+			'but-settings',
+			array( $this, 'create_admin_page' )
+		);
+	}
+
+	/**
+	 * Options page callback.
+	 */
+	public function create_admin_page() {
+		// Set class property.
+		$this->options = get_option( 'but-options' );
+		?>
+		<div class="wrap">
+			<h1>Block Unit Test Advanced</h1>
+			<form method="post" action="options.php" id="but-settings-form">
+				<?php
+					settings_fields( 'but-options' );
+					do_settings_sections( 'but-settings' );
+					submit_button( esc_html__( 'Submit', 'block-unit-test' ) );
+				?>
+			</form>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Block editor bug fixes.
+	 */
+	public function apply_styles_fixed() {
+		// Apply bug fixes.
+		$but_options = get_option( 'but-options' );
+		$screen      = get_current_screen();
+		$wp_theme    = wp_get_theme();
+
+		if ( $but_options['twentig'] ) {
+			?>
+			<style type="text/css">
+				<?php
+				if ( is_plugin_active( 'twentig/twentig.php' ) && $screen->is_block_editor && 'Twenty Twenty-One' === $wp_theme->Name ) { // phpcs:ignore.
+					echo ':root .editor-styles-wrapper {' . twentig_twentyone_generate_color_variables() . '}'; // phpcs:ignore.
+				}
+				?>
+			</style>
+			<?php
+		}
+
+		if ( $but_options['2020'] ) {
+			?>
+			<style type="text/css">
+				<?php
+				if ( $screen->is_block_editor && 'Twenty Twenty' === $wp_theme->Name ) { // phpcs:ignore.
+					echo '
+					.editor-styles-wrapper .wp-block-button .wp-block-button__link:hover {
+						text-decoration: underline;
+					}
+					.editor-styles-wrapper ul.block-editor-block-list__block, .editor-styles-wrapper ol.block-editor-block-list__block, .editor-styles-wrapper ul ul, .editor-styles-wrapper ol ul,
+					hr.wp-block-separator.is-style-wide,
+					.editor-styles-wrapper .wp-block-latest-comments {
+						margin-left: auto;
+						margin-right: auto;
+					}
+					.editor-styles-wrapper ul.block-editor-block-list__block, .editor-styles-wrapper ol.block-editor-block-list__block, .editor-styles-wrapper ul ul, .editor-styles-wrapper ol ul {
+						padding-left: 0;
+					}
+					@media (min-width: 600px) {
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-2 li {
+							width: calc((100% / 2) - 1.25em + (1.25em / 2));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-2 li:nth-child(2n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-3 li {
+							width: calc((100% / 3) - 1.25em + (1.25em / 3));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-3 li:nth-child(3n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-4 li {
+							width: calc((100% / 4) - 1.25em + (1.25em / 4));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-4 li:nth-child(4n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-5 li {
+							width: calc((100% / 5) - 1.25em + (1.25em / 5));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-5 li:nth-child(5n) {
+							margin-right: 0;
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-6 li {
+							width: calc((100% / 6) - 1.25em + (1.25em / 6));
+						}
+						.editor-styles-wrapper ul.wp-block-latest-posts.columns-6 li:nth-child(6n) {
+							margin-right: 0;
+						}
+					}
+					';
+				}
+				?>
+			</style>
+			<?php
+		}
+
+		if ( $but_options['but_wordpress'] ) {
+			?>
+			<style type="text/css">
+				.editor-styles-wrapper .wp-block-quote.is-large:not(.is-style-plain) p,
+				.editor-styles-wrapper .wp-block-quote.is-style-large:not(.is-style-plain) p {
+					font-size: 1.5em;
+					font-style: italic;
+					line-height: 1.6;
+				}
+			</style>
+			<?php
+		}
+	}
+
+	/**
+	 * Fixed know issue on frontend.
+	 */
+	public function apply_styles_fixed_frontend() {
+		$but_options = get_option( 'but-options' );
+		if ( $but_options['but_wordpress'] ) {
+			?>
+			<style type="text/css">
+				.wp-block-quote.is-large:not(.is-style-plain) cite, .wp-block-quote.is-large:not(.is-style-plain) footer, .wp-block-quote.is-style-large:not(.is-style-plain) cite, .wp-block-quote.is-style-large:not(.is-style-plain) footer {
+					display: block;
+				}
+			</style>
+			<?php
+		}
+	}
+
+	/**
+	 * Register and add settings.
+	 */
+	public function page_init() {
+		register_setting(
+			'but-options',
+			'but-options',
+			array( $this, 'sanitize' )
+		);
+
+		add_settings_section(
+			'bug-fixes',
+			'Block editor issues',
+			array( $this, 'print_section_info' ),
+			'but-settings'
+		);
+
+		add_settings_field(
+			'twentig',
+			'Fixes twentig issues',
+			array( $this, 'but_twentig_callback' ),
+			'but-settings',
+			'bug-fixes'
+		);
+
+		$wp_theme = wp_get_theme();
+		if ( 'Twenty Twenty' === $wp_theme->Name ) { // phpcs:ignore.
+			add_settings_field(
+				'2020',
+				'Fixes 2020 theme issues',
+				array( $this, 'but_2020_theme_callback' ),
+				'but-settings',
+				'bug-fixes'
+			);
+		}
+
+		add_settings_field(
+			'but_wordpress', // phpcs:ignore.
+			'Fixes WordPress Blocks issues',
+			array( $this, 'but_wp_callback' ),
+			'but-settings',
+			'bug-fixes'
+		);
+	}
+
+	/**
+	 * Sanitize each setting field as needed.
+	 *
+	 * @param array $input Contains all settings fields as array keys.
+	 */
+	public function sanitize( $input ) {
+		$new_input = array();
+		if ( isset( $input['twentig'] ) ) {
+			$new_input['twentig'] = sanitize_text_field( $input['twentig'] );
+		}
+
+		if ( isset( $input['2020'] ) ) {
+			$new_input['2020'] = sanitize_text_field( $input['2020'] );
+		}
+
+		if ( isset( $input['but_wordpress'] ) ) {
+			$new_input['but_wordpress'] = sanitize_text_field( $input['but_wordpress'] );
+		}
+
+		return $new_input;
+	}
+
+	/**
+	 * Print the Section text.
+	 */
+	public function print_section_info() {
+		print 'Fixes known issues';
+	}
+
+	/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_twentig_callback() {
+		$is_twentig_fixes = $this->options['twentig'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="2021theme" <?php echo esc_html( $is_twentig_fixes ); ?> name="but-options[twentig]" value="twentig" />
+		<?php
+	}
+
+	/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_2020_theme_callback() {
+		$is_2020_fixes = $this->options['2020'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="2020theme" <?php echo esc_html( $is_2020_fixes ); ?> name="but-options[2020]" value="2020" />
+		<?php
+	}
+
+	/**
+	 * Get the settings option array and print one of its values.
+	 */
+	public function but_wp_callback() {
+		$is_wordpress_fixes = $this->options['but_wordpress'] ? 'checked' : '';
+		?>
+		<input type="checkbox" id="but_wordpress" <?php echo esc_html( $is_wordpress_fixes ); ?> name="but-options[but_wordpress]" value="but_wordpress" />
+		<?php
 	}
 
 	/**
@@ -433,6 +689,12 @@ class Block_Unit_Test {
 			<!-- wp:paragraph -->
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius.</p>
 			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Outline button</a></div>
+			<!-- /wp:button --></div>
+			<!-- /wp:buttons -->
 
 			<!-- wp:separator -->
 			<hr class="wp-block-separator" />
@@ -1376,6 +1638,30 @@ class Block_Unit_Test {
 			<!-- /wp:social-links -->
 		';
 		return apply_filters( 'block_unit_test_content', $content );
+	}
+
+	/**
+	 * Plugin row meta links
+	 *
+	 * @param array|array   $input already defined meta links.
+	 * @param string|string $file plugin file path and name being processed.
+	 * @return array $input
+	 */
+	public function plugin_row_meta( $input, $file ) {
+
+		if ( 'block-unit-test/class-block-unit-test.php' !== $file ) {
+			return $input;
+		}
+
+		$url = site_url( '/wp-admin/tools.php?page=but-settings' );
+
+		$links = array(
+			'<a href="' . esc_url( $url ) . '">' . esc_html__( 'BUT Advanced settings', 'block-unit-test' ) . '</a>',
+		);
+
+		$input = array_merge( $input, $links );
+
+		return $input;
 	}
 }
 Block_Unit_Test::register();
