@@ -60,6 +60,10 @@ Thank you so much for your support!
 
 ## :scroll: Changelog
 
+### 1.1.0 version
+
+- Add: options top fixed twentig/Twenty Twenty(-One) style bugs.
+
 ### 1.0.9 version
 
 - Update: Pullquote blocks structure.

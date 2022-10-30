@@ -6,10 +6,10 @@
  * Author: AbstractWP
  * Author URI: https://www.abstractwp.com/
  * Tags: gutenberg, editor, block, unit test, coblocks
- * Version: 1.0.9
+ * Version: 1.1.0
  * Text Domain: 'block-unit-test'
  * Domain Path: languages
- * Tested up to: 6.0.2
+ * Tested up to: 6.0.3
  *
  * Block Unit Test is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
