@@ -14,6 +14,10 @@ Coming soon.
 
 See Block Unit Test at [WP Test Demo](https://demotest.abstractwp.com/block-unit-test/)
 
+### How to add/remove custom blocks and patterns
+
+Once Block Unit Test plugin installed, A draft page with name **Block Unit Test**. By edit that page you can add or remove any blocks and patterns.
+
 ## :electric_plug: Installation
 
 1. Install the offical [Gutenberg](https://wordpress.org/plugins/gutenberg/) plugin. Note that Gutenberg is not suggested for use on production sites.
