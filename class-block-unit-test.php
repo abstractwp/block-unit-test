@@ -133,7 +133,7 @@ class Block_Unit_Test {
 		$screen      = get_current_screen();
 		$wp_theme    = wp_get_theme();
 
-		if ( $but_options['twentig'] ) {
+		if ( isset( $but_options['twentig'] ) ) {
 			?>
 			<style type="text/css">
 				<?php
@@ -145,7 +145,7 @@ class Block_Unit_Test {
 			<?php
 		}
 
-		if ( $but_options['2020'] ) {
+		if ( isset( $but_options['2020'] ) ) {
 			?>
 			<style type="text/css">
 				<?php
@@ -202,7 +202,7 @@ class Block_Unit_Test {
 			<?php
 		}
 
-		if ( $but_options['but_wordpress'] ) {
+		if ( isset( $but_options['but_wordpress'] ) ) {
 			?>
 			<style type="text/css">
 				.editor-styles-wrapper .wp-block-quote.is-large:not(.is-style-plain) p,
@@ -221,7 +221,7 @@ class Block_Unit_Test {
 	 */
 	public function apply_styles_fixed_frontend() {
 		$but_options = get_option( 'but-options' );
-		if ( $but_options['but_wordpress'] ) {
+		if ( isset( $but_options['but_wordpress'] ) ) {
 			?>
 			<style type="text/css">
 				.wp-block-quote.is-large:not(.is-style-plain) cite, .wp-block-quote.is-large:not(.is-style-plain) footer, .wp-block-quote.is-style-large:not(.is-style-plain) cite, .wp-block-quote.is-style-large:not(.is-style-plain) footer {
