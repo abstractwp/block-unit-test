@@ -674,17 +674,25 @@ class Block_Unit_Test {
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. </p>
 			<!-- /wp:paragraph -->
 
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
 			<!-- wp:button {"align":"left"} -->
 			<div class="wp-block-button alignleft"><a class="wp-block-button__link" href="https://themebeans.com">Left Aligned Button</a></div>
 			<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
 
 			<!-- wp:paragraph -->
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius.</p>
 			<!-- /wp:paragraph -->
 
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
 			<!-- wp:button {"align":"right"} -->
 			<div class="wp-block-button alignright"><a class="wp-block-button__link">Right Aligned Button</a></div>
 			<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
 
 			<!-- wp:paragraph -->
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius.</p>
