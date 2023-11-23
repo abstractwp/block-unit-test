@@ -1533,8 +1533,8 @@ class Block_Unit_Test {
 				<h2>Media &amp; Text</h2>
 				<!-- /wp:heading -->
 
-				<!-- wp:media-text {"mediaType":"image"} -->
-				<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
+				<!-- wp:media-text {"align":"","mediaType":"image"} -->
+				<div class="wp-block-media-text is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
 				<p class="has-large-font-size">Large text</p>
 				<!-- /wp:paragraph -->
 
@@ -1542,6 +1542,10 @@ class Block_Unit_Test {
 				<p>This is part of the InnerBlocks text for the Media &amp; Text block.</p>
 				<!-- /wp:paragraph --></div></div>
 				<!-- /wp:media-text -->
+
+				<!-- wp:separator -->
+				<hr class="wp-block-separator has-alpha-channel-opacity"/>
+				<!-- /wp:separator -->
 			';
 		}
 		$content .= '
@@ -1557,8 +1561,8 @@ class Block_Unit_Test {
 			<h3>Text on right</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"align":"","mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"mediaType":"image","className":"alignwide"} -->
+			<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
 			<!-- /wp:paragraph --></div></div>
 			<!-- /wp:media-text -->
@@ -1571,11 +1575,15 @@ class Block_Unit_Test {
 			<h3>Text on left</h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:media-text {"align":"","mediaPosition":"right","mediaType":"image","className":"alignnone"} -->
-			<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile alignnone"><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
+			<!-- wp:media-text {"mediaPosition":"right","mediaType":"image","className":"alignwide"} -->
+			<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile"><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…"} -->
 			<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. </p>
-			<!-- /wp:paragraph --></div></div>
+			<!-- /wp:paragraph --></div><figure class="wp-block-media-text__media"><img src="' . esc_url( $this->url . '/placeholder.jpg' ) . '" alt=""/></figure></div>
 			<!-- /wp:media-text -->
+
+			<!-- wp:separator -->
+			<hr class="wp-block-separator has-alpha-channel-opacity"/>
+			<!-- /wp:separator -->
 
 			<!-- wp:heading -->
 			<h2>Calendar</h2>
